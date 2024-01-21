@@ -1,0 +1,81 @@
+.folder-analyzer{
+  position: relative;
+  top: -80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  .path-input{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    min-height: 80px;
+    
+    &-textbox{
+      border-radius: 20px;
+      height: 40px;
+      min-width: 430px;
+      border: 3px solid #797777;
+      padding: 1px 5px 1px 20px;
+      font-size: 1rem;
+    }
+    
+    .error{
+      color: red;
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+  }
+  
+  .analyze-btn{
+    margin: 20px 0px;
+    width: 150px;
+    height: 50px;
+    font-size: 1.5rem;
+    border-radius: 20px;
+    background-color: #79AC78;
+    color: white;
+    border: 0;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #618264;
+    }
+    
+    &:disabled{
+      background-color: #797777;
+      cursor: not-allowed;
+    }
+  }
+  
+  &-results{
+    margin-top: 16px;
+    align-self: start;
+    text-align: left;
+    
+    h3{
+      font-size: 1.5rem;
+    }
+    
+    .item{
+      .file_name{
+        display: inline;
+      }
+      
+      .version{
+        display: inline;
+        color: #797777;
+        margin-left: 8px;
+      }
+      
+      .no_changes{
+        color: #797777;
+        margin-left: 20px;
+      }
+    }
+  }
+  
+  .fetch_error{
+    color: red;
+  }
+}  

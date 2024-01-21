@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PuxTask.Server", "PuxTask.Server\PuxTask.Server.csproj", "{7BC38C21-45BC-48A2-A725-D6F48B93659A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BC38C21-45BC-48A2-A725-D6F48B93659A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BC38C21-45BC-48A2-A725-D6F48B93659A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BC38C21-45BC-48A2-A725-D6F48B93659A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BC38C21-45BC-48A2-A725-D6F48B93659A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5E9E987-F49D-4330-A07F-55191EF5978D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5E9E987-F49D-4330-A07F-55191EF5978D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5E9E987-F49D-4330-A07F-55191EF5978D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F5E9E987-F49D-4330-A07F-55191EF5978D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5E9E987-F49D-4330-A07F-55191EF5978D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5E9E987-F49D-4330-A07F-55191EF5978D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2D9302E8-B03A-47EE-BE1C-66CA56C83A21}
+	EndGlobalSection
+EndGlobal
