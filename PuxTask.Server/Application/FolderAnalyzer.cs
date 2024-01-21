@@ -39,7 +39,7 @@ public class FolderAnalyzerHandler : IRequestHandler<FolderAnalyzer, FolderAnaly
         var trackedFiles = (await _fileStateStorage.GetTrackedFiles(folderPath)).ToList(); //Note: only one access to storage
 
         // handle new untracked folder
-        var isTrackedFolder = _fileStateStorage.IsTrackedFolder(folderPath);
+        var isTrackedFolder = await _fileStateStorage.IsTrackedFolder(folderPath);
         if (isTrackedFolder is false)
         {
             var initializedFiles = InitializeFiles(currentFiles);
@@ -78,9 +78,11 @@ public class FolderAnalyzerHandler : IRequestHandler<FolderAnalyzer, FolderAnaly
         }
         
         //update database
-        _fileStateStorage.AddNewFiles(FilesToAdd);
-        _fileStateStorage.UpdateFiles(FilesToUpdate);
-        _fileStateStorage.RemoveFiles(FilesToRemove);
+        await Task.WhenAll(
+            _fileStateStorage.AddNewFiles(FilesToAdd),
+            _fileStateStorage.UpdateFiles(FilesToUpdate),
+            _fileStateStorage.RemoveFiles(FilesToRemove)
+        );
         
         return new FolderAnalysisResult
         {

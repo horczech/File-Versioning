@@ -7,10 +7,10 @@ namespace PuxTask.Server.Storage;
 public interface IFileStateStorage
 {
     Task RemoveFiles(IEnumerable<TrackedFile> filePathsToRemove);
-    void AddNewFiles(IEnumerable<TrackedFile> filesToAdd);
-    void UpdateFiles(IEnumerable<TrackedFile> filesToUpdate);
+    Task AddNewFiles(IEnumerable<TrackedFile> filesToAdd);
+    Task UpdateFiles(IEnumerable<TrackedFile> filesToUpdate);
     Task<IEnumerable<TrackedFile>> GetTrackedFiles(string folderPath);
-    bool IsTrackedFolder(string folderPath);
+    Task<bool> IsTrackedFolder(string folderPath);
 }
 
 public class FileStateStorage : IFileStateStorage
@@ -46,13 +46,13 @@ public class FileStateStorage : IFileStateStorage
         return Task.CompletedTask;
     }
 
-    public bool IsTrackedFolder(string folderPath)
+    public Task<bool> IsTrackedFolder(string folderPath)
     {
         var isFolderTracked = FileStatesStorage.Keys.Any(key => key.StartsWith(Path.GetFullPath(folderPath), PathComparer.ComparisonType));
-        return isFolderTracked;
+        return Task.FromResult(isFolderTracked);
     }
 
-    public void AddNewFiles(IEnumerable<TrackedFile> filesToAdd)
+    public Task AddNewFiles(IEnumerable<TrackedFile> filesToAdd)
     {
         foreach (var fileToAdd in filesToAdd)
         {
@@ -64,14 +64,18 @@ public class FileStateStorage : IFileStateStorage
                 _logger.LogError("Failed to add new file to the database. the file with the following path already exists. Path: {FilePath}", fileToAdd.Path);
             }
         }
+
+        return Task.CompletedTask;
     }
 
-    public void UpdateFiles(IEnumerable<TrackedFile>filesToUpdate)
+    public Task UpdateFiles(IEnumerable<TrackedFile>filesToUpdate)
     {
         foreach (var fileToUpdate in filesToUpdate)
         {
             var fileState = new FileState { LastModified = fileToUpdate.LastModified, Version = fileToUpdate.Version };
             FileStatesStorage[fileToUpdate.Path] = fileState;
         }   
+        
+        return Task.CompletedTask;
     }
 }
