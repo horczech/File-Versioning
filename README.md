@@ -10,7 +10,7 @@ Jak Spustit:
       - client na `http://localhost:5173/`
 4) Do input fieldu zadejte absolutní cestu ke složce a stiskněte tlačítko Analyze
 
-Popis řešení Backend:
+**Popis řešení Backend:**
  - **Ukládání dat**
    - veškerá logika spojená s ukládáním je implementována v `FileStateStorage` který implementuje interface `IFileStateStorage` což odstiňuje konkretní implemetaci díky čemuž můžeme jednoduše nahradit databázi  
    - použití databáze bylo explicitně zakázáno takže jsem se rozhodl potřebná data ukládat do `ConcurentDictinary` v Singleton service
@@ -23,15 +23,16 @@ Popis řešení Backend:
    - při implementaci jsem se snažil myslet na různé edge cases jako je např:
      - použití aplikace jak na různých systémech jelikož file paths fungují rozdílně na windows a linux
      - podpora aplikace napříč časovými zónami (datum poslední změny souboru je uloženo v UTC formátu)
-    
 
-Popis řešení Frontedn:
+- **Endpoint**
+    -pokud nastane chyba způsobená uživatelem (prázdná cesta, nebo neplatná cesta) tak se vrátí status code 400 s popisem problému      
+
+**Popis řešení Frontend:**
  - Frontend je napsaný pomocí React, pro stylování používám "LESS CSS"
  - Pokud uzivatel nevyplní žádnou cestu tak dostane error message
    - ![image](https://github.com/horczech/PuxTest/assets/5252663/70148455-d3d7-46dc-87f1-87e5fa3503fd)
  - pokud se stane nějaká chyba na serveru tak je o tom uživatel taky informován
+ - integrace mezi React a ASP.NET je implementovana za pomocí Vite
 
-
-
-
+# Ukázka user interface
 ![image](https://github.com/horczech/PuxTest/assets/5252663/b1e73517-bb22-4413-a1d7-4a5329021b54)
