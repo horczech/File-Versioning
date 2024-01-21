@@ -3,12 +3,12 @@ Cílem úkolu je implementovat "file versioning tool" ketrý vrátí seznam při
 
 **Jak Spustit:**
 1) Naklonujte si tento repozitář
-2) V terminálu si otevřete složku `PuxTask.Server`
-3) Zavolejte `dotnet run`
-    - automatickyty se spustí server i client část a měl by se otevřít prohlížeč pokud ne tak
+2) V terminu otevřete složku `PuxTask.Server` a zavolejte `npm install`
+3) Běžte do složky`PuxTask.Server` a zavolejte `dotnet run`
+    - automatickyty se spustí server i client část 
       - swagger běží na adrese`http://localhost:5085/swagger/index.html`
       - client na `http://localhost:5173/`
-4) Do input fieldu zadejte absolutní cestu ke složce a stiskněte tlačítko Analyze
+5) Do input fieldu zadejte absolutní cestu ke složce a stiskněte tlačítko Analyze
 
 **Popis řešení Backend:**
  - **Ukládání dat**
