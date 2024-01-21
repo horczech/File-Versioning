@@ -1,7 +1,7 @@
 # Pux Cvičný úkol
 Cílem úkolu je implementovat "file versioning tool" ketrý vrátí seznam přidaných, modifikovaných a odstraněných souborů ve složce. V zadání bylo, že mám řešení implementovat v **ASP.NET WebForms** avšak WebForms nepodporují novejší verze .NET a ASP.NET takže jsem se rozhodl pro implementaci backendu v .NET8 spolu s AspNetCore 8 a frontend v React.
 
-Jak Spustit:
+**Jak Spustit:**
 1) Naklonujte si tento repozitář
 2) V terminálu si otevřete složku `PuxTask.Server`
 3) Zavolejte `dotnet run`
