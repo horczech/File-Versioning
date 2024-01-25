@@ -1,0 +1,66 @@
+.folder-analyzer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.folder-analyzer .path-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  min-height: 80px;
+}
+.folder-analyzer .path-input-textbox {
+  border-radius: 20px;
+  height: 40px;
+  min-width: 430px;
+  border: 3px solid #797777;
+  padding: 1px 5px 1px 20px;
+  font-size: 1rem;
+}
+.folder-analyzer .path-input .error {
+  color: red;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.folder-analyzer .analyze-btn {
+  margin: 20px 0px;
+  width: 150px;
+  height: 50px;
+  font-size: 1.5rem;
+  border-radius: 20px;
+  background-color: #79AC78;
+  color: white;
+  border: 0;
+}
+.folder-analyzer .analyze-btn:hover {
+  cursor: pointer;
+  background-color: #618264;
+}
+.folder-analyzer .analyze-btn:disabled {
+  background-color: #797777;
+  cursor: not-allowed;
+}
+.folder-analyzer-results {
+  margin-top: 16px;
+  align-self: start;
+  text-align: left;
+}
+.folder-analyzer-results h3 {
+  font-size: 1.5rem;
+}
+.folder-analyzer-results .item .file_name {
+  display: inline;
+}
+.folder-analyzer-results .item .version {
+  display: inline;
+  color: #797777;
+  margin-left: 8px;
+}
+.folder-analyzer-results .item .no_changes {
+  color: #797777;
+  margin-left: 20px;
+}
+.folder-analyzer .fetch_error {
+  color: red;
+}
